@@ -27,7 +27,7 @@ python scorer_data_precess.py --dataset_type nerd --task_type ner --train_save_p
 ```
 nohup python -u scorer_train.py --dataset_type nerd --task_type ner --scorer_train_data_path ../../dataset/Few-NERD/scorer_data/ner/train_nerd_all.tsv --scorer_dev_data_path ../../dataset/Few-NERD/scorer_data/ner/dev_nerd_all.tsv --model_save nerd_train_large_all --batch_size 32 --model_name ../../pretrain_model/roberta-large --hidden_size 1024 --epoch 3 > log/nerd/socrer_train_nerd.txt 2>&1 &
 ```
-## evaluate
+## Evaluate
 Run the following command to perform iterative training and extraction, and then run stge.py for extraction only.
 ```
 nohup python -u scorer_train.py --dataset_type ace --task_type ner --max_new_tokens 256 --method_type stge --logit_strategy fusion --shot_num 20 --demo_num 2 --load_scorer_path  model/nerd/nerd_train_large_all --model_save nerd_train_large_20_shot_iterative --batch_size 32 --epoch 10 --model_name ../../pretrain_model/roberta-large --hidden_size 1024 --train_type stge > log/ace/ner.txt 2>&1 &
