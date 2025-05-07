@@ -32,3 +32,14 @@ Run the following command to perform iterative training and extraction, and then
 ```
 nohup python -u scorer_train.py --dataset_type ace --task_type ner --max_new_tokens 256 --method_type stge --logit_strategy fusion --shot_num 20 --demo_num 2 --load_scorer_path  model/nerd/nerd_train_large_all --model_save nerd_train_large_20_shot_iterative --batch_size 32 --epoch 10 --model_name ../../pretrain_model/roberta-large --hidden_size 1024 --train_type stge > log/ace/ner.txt 2>&1 &
 ```
+
+## Citation
+```
+@inproceedings{li2025bridging,
+  title={Bridging the Gap: Aligning Language Model Generation with Structured Information Extraction via Controllable State Transition},
+  author={Li, Hao and Ren, Yubing and Cao, Yanan and Li, Yingjie and Fang, Fang and Lin, Zheng and Wang, Shi},
+  booktitle={Proceedings of the ACM on Web Conference 2025},
+  pages={1811--1821},
+  year={2025}
+}
+```
