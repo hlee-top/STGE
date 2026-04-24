@@ -320,11 +320,11 @@ class STGELogitsProcessor(LogitsProcessor):
                 self.key_state,
                 self.generate_dict,
                 scores)
-            self.generate_dict["previous_state"] = self.current_state
-            if self.generate_dict["previous_state"] == "generate_value":
-                next_max_tokens = torch.argmax(scores, dim=-1).cpu().numpy().tolist()[0]
-                self.generate_dict["value_max_logit"] = scores[:, next_max_tokens]
-            self.current_state = new_current_state
+        self.generate_dict["previous_state"] = self.current_state
+        if self.generate_dict["previous_state"] == "generate_value":
+            next_max_tokens = torch.argmax(scores, dim=-1).cpu().numpy().tolist()[0]
+            self.generate_dict["value_max_logit"] = scores[:, next_max_tokens]
+        self.current_state = new_current_state
 
         if len(force_words_ids) != 0:
             all_id_list = [i for i in range(self.model_kwargs.vocab_size)]
