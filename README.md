@@ -1,5 +1,5 @@
 ## STGE
-Code for paper: Bridging the Gap: Aligning Language Model Generation with Structured Information Extraction via Controllable State Transition
+Code for paper: Bridging the Gap: Aligning Language Model Generation with Structured Information Extraction via Controllable State Transition (WWW 2025)
 ## Environment
 To run our code, please install all the dependency packages by using the following command:
 ```
